@@ -1,0 +1,20 @@
+{
+  "name": "reading-companion-v0-web",
+  "version": "0.0.2",
+  "description": "Browser-based v0 prototype of the ambient reading research partner. Moment 1 only: 'Pull the literature' — point camera at book passage, ask question, hear synthesized answer with citations through paired audio glasses. Deployed as Vercel functions + static frontend.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  },
+  "devDependencies": {
+    "vercel": "^37.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

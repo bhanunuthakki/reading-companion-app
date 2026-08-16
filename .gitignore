@@ -1,0 +1,31 @@
+# Local credentials and state
+.env
+.env.*
+!.env.example
+credentials.json
+token.json
+*.key
+*.pem
+*.p12
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+.gradle/
+local.properties
+*.tsbuildinfo
+
+# Tooling and operating-system files
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

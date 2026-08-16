@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>Reading Companion v0</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Reading Companion</h1>
+    <span id="model-tag" class="tag">…</span>
+  </header>
+
+  <main>
+    <section class="camera-pane">
+      <video id="camera" autoplay playsinline muted></video>
+      <canvas id="capture-canvas" hidden></canvas>
+      <div id="camera-overlay" class="overlay">
+        <p id="overlay-text">Grant camera access to begin.</p>
+      </div>
+    </section>
+
+    <section class="control-pane">
+      <button id="ask-btn" class="ask-btn" disabled>
+        <span class="ask-btn-label">Ask</span>
+        <span class="ask-btn-sub">tap & speak</span>
+      </button>
+      <p id="status" class="status">Initializing…</p>
+    </section>
+
+    <section class="log-pane" aria-label="Session log">
+      <div id="log" class="log"></div>
+    </section>
+  </main>
+
+  <template id="card-template">
+    <article class="card">
+      <header class="card-header">
+        <time class="card-time"></time>
+        <span class="card-question"></span>
+      </header>
+      <p class="card-answer"></p>
+      <ul class="card-citations"></ul>
+    </article>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>

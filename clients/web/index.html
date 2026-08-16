@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <title>Thought Partner</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="phone">
+    <header>
+      <h1>Thought Partner</h1>
+      <div class="header-right">
+        <span id="conn-dot" class="conn-dot" data-state="connecting" title="Core connection"></span>
+        <span id="model-tag" class="tag">…</span>
+      </div>
+    </header>
+
+    <div id="banner" class="banner" hidden></div>
+
+    <!-- Glasses simulator strip: wear toggle + badge surface + delivery ladder log -->
+    <section class="glasses" aria-label="Glasses simulator">
+      <div class="glasses-head">
+        <span class="glasses-title">glasses sim</span>
+        <label class="wear-toggle" title="Simulates glasses on-face (sends the wear message)">
+          <input type="checkbox" id="wear-toggle" />
+          <span class="wear-track"><span class="wear-knob"></span></span>
+          <span id="wear-label">not worn</span>
+        </label>
+      </div>
+      <div id="glasses-badges" class="glasses-badges"></div>
+      <ul id="delivery-log" class="delivery-log"></ul>
+    </section>
+
+    <!-- Thread rail -->
+    <nav class="rail" aria-label="Threads">
+      <button id="new-thread" class="rail-chip rail-new" title="Start a new thread">+ new</button>
+      <div id="thread-rail" class="rail-scroll"></div>
+    </nav>
+
+    <!-- Memory search -->
+    <section class="memory" aria-label="Memory search">
+      <input id="memory-input" type="search" placeholder="Search memory… (Enter)" autocomplete="off" />
+      <div id="memory-results" class="memory-results" hidden></div>
+    </section>
+
+    <!-- Active thread -->
+    <main class="thread-view">
+      <div id="thread-head" class="thread-head" hidden>
+        <h2 id="thread-topic"></h2>
+        <label class="ceiling" title="Per-thread politeness ceiling (clamps every delivery)">
+          <span>ceiling</span>
+          <select id="ceiling-select">
+            <option value="hold">hold — phone only</option>
+            <option value="badge">badge — silent chip</option>
+            <option value="earcon">earcon — soft tone</option>
+            <option value="speak">speak — in your ear</option>
+          </select>
+        </label>
+      </div>
+      <div id="timeline" class="timeline"></div>
+    </main>
+
+    <!-- Ask bar -->
+    <footer class="ask-bar">
+      <div id="pending-capture" class="pending-capture" hidden></div>
+      <p id="ask-status" class="ask-status"></p>
+      <div class="ask-row">
+        <button id="capture-btn" class="icon-btn" title="Capture context (camera or upload)" aria-label="Capture">&#128247;</button>
+        <input id="ask-input" type="text" autocomplete="off"
+          placeholder='Try “compare the literature on spaced repetition vs rereading”' />
+        <button id="mic-btn" class="icon-btn" title="Hold to talk" aria-label="Hold to talk">&#127908;</button>
+        <button id="send-btn" class="icon-btn send" title="Send" aria-label="Send">&#10148;</button>
+      </div>
+    </footer>
+
+    <!-- Capture panel (overlay) -->
+    <div id="capture-panel" class="capture-panel" hidden>
+      <div class="capture-inner">
+        <div class="capture-head">
+          <span>Capture context</span>
+          <button id="capture-close" class="icon-btn" title="Close" aria-label="Close capture">&#10005;</button>
+        </div>
+        <div class="capture-stage">
+          <video id="capture-video" autoplay playsinline muted></video>
+          <p id="capture-error" class="capture-error" hidden></p>
+        </div>
+        <div class="capture-controls">
+          <label class="capture-kind">
+            <span>kind</span>
+            <select id="capture-kind">
+              <option value="">auto</option>
+              <option value="page">page</option>
+              <option value="document">document</option>
+              <option value="whiteboard" selected>whiteboard</option>
+              <option value="screen">screen</option>
+              <option value="scene">scene</option>
+              <option value="object">object</option>
+            </select>
+          </label>
+          <button id="snap-btn" class="capture-action">Snap</button>
+          <button id="upload-btn" class="capture-action alt">Upload…</button>
+          <input id="upload-input" type="file" accept="image/*" hidden />
+        </div>
+        <p id="capture-status" class="capture-status"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

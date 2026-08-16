@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <!-- The Ray-Ban Display viewport is exactly 600 x 600. -->
+  <meta name="viewport" content="width=600, height=600, initial-scale=1.0, user-scalable=no" />
+  <title>Reading Companion — Display</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- 600x600 additive canvas. Black renders transparent on the waveguide. -->
+  <main id="app" aria-live="polite">
+    <header class="bar">
+      <span class="brand">READING</span>
+      <span id="status" class="chip">connecting…</span>
+    </header>
+
+    <section id="stage" class="stage">
+      <p class="hint">Tap your temple and ask about what you're reading.</p>
+    </section>
+
+    <nav class="dock" aria-label="Actions">
+      <button class="focusable" data-action="research">Research</button>
+      <button class="focusable" data-action="quick">Quick</button>
+      <button class="focusable" data-action="watch">Watch</button>
+    </nav>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

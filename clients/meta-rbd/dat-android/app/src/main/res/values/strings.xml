@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Reading Companion</string>
+    <!-- From the Meta Wearables Developer Center. Placeholder for the scaffold. -->
+    <string name="mwdat_app_id">REPLACE_WITH_YOUR_MWDAT_APP_ID</string>
+</resources>
