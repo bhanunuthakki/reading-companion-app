@@ -9,7 +9,7 @@ Deployed as **Vercel functions + static frontend**. No local server, no tunnel, 
 You'll need a free Vercel account and a Gemini API key. Then:
 
 ```bash
-cd C:\Users\bhanu\.gemini\antigravity\scratch\reading-companion-app\v0-web
+cd <repo-root>/v0-web
 
 # 1. Install the Vercel CLI (one time, globally)
 npm install -g vercel

@@ -6,15 +6,16 @@ Status: **build-ready, two-surface**. The default build depends only on stable a
 
 ## Build & run
 
-Prereqs on this machine: JDK 17 (`C:\Users\bhanu\android-toolchain\jdk17`), Gradle 8.9 (`C:\Users\bhanu\android-toolchain\gradle-8.9`), Android SDK (`C:\Users\bhanu\AppData\Local\Android\Sdk`, set in `local.properties`).
+Prereqs: JDK 17, Gradle 8.9, and an Android SDK. Set `JAVA_HOME` and
+`ANDROID_HOME` to paths on your machine; keep `local.properties` untracked.
 
 ```powershell
 cd clients\android-xr
-$env:JAVA_HOME = "C:\Users\bhanu\android-toolchain\jdk17"
-$env:ANDROID_HOME = "C:\Users\bhanu\AppData\Local\Android\Sdk"
+$env:JAVA_HOME = "<path-to-jdk17>"
+$env:ANDROID_HOME = "<path-to-android-sdk>"
 
-C:\Users\bhanu\android-toolchain\gradle-8.9\bin\gradle.bat assembleDebug        # default (stable) build
-C:\Users\bhanu\android-toolchain\gradle-8.9\bin\gradle.bat testDebugUnitTest    # pure-JVM tests
+gradle.bat assembleDebug        # default (stable) build
+gradle.bat testDebugUnitTest    # pure-JVM tests
 
 # install on whichever AVD is running (ai_glasses or companion_phone):
 & "$env:ANDROID_HOME\platform-tools\adb.exe" install -r app\build\outputs\apk\debug\app-debug.apk

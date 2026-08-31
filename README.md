@@ -29,7 +29,16 @@ npm run typecheck   # tsc --noEmit
 npm test            # Vitest suite
 ```
 
+This is a local prototype. It has no user accounts, hosted service, or network
+access control. Without API keys it uses mock providers; configured keys send
+page text or images to the selected provider. Sessions are JSON files under
+`SESSION_DIR` (default `.sessions/`) and are not encrypted or synced. Delete
+that directory to remove local session state. Provider-side retention is
+outside this repository's control.
+
 ## Privacy & Device Constraints
 
 - Capture is gesture-driven: cameras and microphones only activate on explicit request.
 - No raw images or audio are stored permanently; only minimal derived session context is kept.
+- There is no remote account or deletion workflow. Remove local files yourself;
+  provider-side deletion must be handled with that provider.

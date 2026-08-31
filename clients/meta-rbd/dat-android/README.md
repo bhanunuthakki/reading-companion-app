@@ -19,16 +19,16 @@ No Gradle wrapper jar is checked in — use a system Gradle ≥ 8.7 (this machin
 elsewhere.
 
 ```powershell
-$env:JAVA_HOME   = 'C:\Users\bhanu\android-toolchain\jdk17'
-$env:ANDROID_HOME = 'C:\Users\bhanu\AppData\Local\Android\Sdk'
+$env:JAVA_HOME   = '<path-to-jdk17>'
+$env:ANDROID_HOME = '<path-to-android-sdk>'
 $env:Path         = "$env:JAVA_HOME\bin;$env:Path"
-cd C:\Users\bhanu\.gemini\antigravity\scratch\reading-companion-app\clients\meta-rbd\dat-android
+cd <repo-root>\clients\meta-rbd\dat-android
 
 # assemble the APK
-C:\Users\bhanu\android-toolchain\gradle-8.9\bin\gradle.bat assembleDebug
+gradle.bat assembleDebug
 
 # pure-JVM unit tests (WS protocol encode/decode + reconnect backoff)
-C:\Users\bhanu\android-toolchain\gradle-8.9\bin\gradle.bat testDebugUnitTest
+gradle.bat testDebugUnitTest
 ```
 
 APK lands at `app/build/outputs/apk/debug/app-debug.apk`.
@@ -99,7 +99,7 @@ facade — see the seam comment in `device/GlassesDevice.kt`.
 cd ..\..\..\core ; npm start
 
 # 2. Phone AVD (companion_phone), install, launch
-$env:ANDROID_HOME = 'C:\Users\bhanu\AppData\Local\Android\Sdk'
+$env:ANDROID_HOME = '<path-to-android-sdk>'
 & "$env:ANDROID_HOME\emulator\emulator.exe" -avd companion_phone
 & "$env:ANDROID_HOME\platform-tools\adb.exe" install app\build\outputs\apk\debug\app-debug.apk
 & "$env:ANDROID_HOME\platform-tools\adb.exe" shell am start -n com.readingcompanion.rbd/.MainActivity

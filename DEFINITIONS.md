@@ -2,7 +2,7 @@
 
 **Scope:** project
 **Owner:** reading-companion-app
-**Inherits:** C:\Users\Bhanu\.gemini\DEFINITIONS.md
+**Inherits:** the runtime's global `DEFINITIONS.md`, when configured.
 
 Canonical domain vocabulary. Use these terms **verbatim** in code (variables, types, functions, fields), comments, commits, and conversation. Do not coin synonyms; add a term here before using it.
 

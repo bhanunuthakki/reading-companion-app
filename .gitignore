@@ -19,6 +19,19 @@ coverage/
 .gradle/
 local.properties
 *.tsbuildinfo
+.sessions/
+.threads/
+.jobs/
+.captures/
+captures/
+recordings/
+artifacts/
+*.wav
+*.mp3
+*.webm
+*.png
+*.jpg
+*.jpeg
 
 # Tooling and operating-system files
 .venv/

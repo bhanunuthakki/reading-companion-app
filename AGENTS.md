@@ -1,6 +1,6 @@
 # Reading Companion — Project Rulebook
 
-> Layers on top of the global `AGENTS.md` at `C:\Users\Bhanu\.gemini\AGENTS.md`. Shared safety and procedure routing are not repeated here; only repo-specific facts follow.
+> Layers on top of the runtime's global `AGENTS.md`. Shared safety and procedure routing are not repeated here; only repo-specific facts follow.
 
 ## What this repo is
 
