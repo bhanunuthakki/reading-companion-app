@@ -1,6 +1,6 @@
 # Staged Roadmap — Reading Companion as Ambient Research Partner
 
-This supersedes the framing in [architecture.md](architecture.md). After Round 2 of grilling, the product is **not** an audiobook narrator. It's a **silent, ambient research partner** that lives alongside your reading session — eyes on the page are yours, brain on the page is yours, the model is the smart friend in the chair next to you who happens to have access to the entire academic literature and your personal library, and can dispatch research while you keep reading.
+This owns the product framing; [architecture.md](architecture.md) maps the corresponding infrastructure. After Round 2 of grilling, the product is **not** an audiobook narrator. It's a **silent, ambient research partner** that lives alongside your reading session — eyes on the page are yours, brain on the page is yours, the model is the smart friend in the chair next to you who happens to have access to the entire academic literature and your personal library, and can dispatch research while you keep reading.
 
 ## The reframe in one paragraph
 
@@ -233,7 +233,7 @@ Total: about 8–12 hours of focused work for someone comfortable with Android +
 
 ## Decision log (for future me re-reading this)
 
-- The audiobook framing in [architecture.md](architecture.md) is wrong for this product. Update the doc when we get to v1.
+- [architecture.md](architecture.md) now reflects this research-partner baseline; keep its module map aligned with Core.
 - Gen 1 Ray-Ban Meta is a viable Stage 0 device only with the escalation ladder; naively-on continuous video kills it.
 - Stage 0 niche is real (tens of thousands of users globally) and they will pay; Stage 1 broadens to hundreds of thousands; Stage 2 is the mainstream-curious-reader bet.
 - The Thinking Machines TML-Interaction-Small dependency is for Stage 1+. We design the model layer behind a `VoiceSession` interface so we can swap it in without rewriting the app (see [architecture.md §"Vendor swap layer"](architecture.md#vendor-swap-layer)).

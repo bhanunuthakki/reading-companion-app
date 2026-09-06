@@ -11,26 +11,25 @@ attribution, privacy, and honest device capability. A coherent capture→ask→r
 matters more than feature count. Never present simulator, mock, or browser behavior as physical-device
 proof.
 
-- `staged-roadmap.md` — **canonical product framing** (ambient research partner; v0 = "pull the literature", manual-capture only). Supersedes the audiobook framing in `architecture.md`.
-- `architecture.md` — infrastructure reference (image pipeline, vendor-swap layer, session state machine, cost model). Audiobook framing is **deprecated**; the rest applies.
+- `staged-roadmap.md` — **canonical product framing** (ambient research partner; v0 = "pull the literature", manual-capture only). Owns the requested reading/research outcome.
+- `architecture.md` — current infrastructure map and implementation authorities; provider economics require fresh evidence.
 - `cross-platform-build-plan.md`, `tml-research-preview-pitch.md` — client split and the TML upgrade path.
 - `DEFINITIONS.md` — **canonical domain vocabulary; use these terms verbatim** (Content, ContentRef, Session, Cursor, VoiceSession, ResearchDispatcher, Watcher, Core, Client, …). Add a term there before coining one.
 
-## Layout
+## Improvement latitude and working map
 
-- `core/` — shared TypeScript service (`reading-companion-core`), Node ≥20, ESM, strict TS. Express REST + one WebSocket per live Session.
-- `clients/web/` — Core-served phone web client; use its smoke script against a running Core.
-- `clients/meta-rbd/web-app/` — functional browser surface for the Meta display shape; `clients/meta-rbd/dat-android/` is a Gradle/Kotlin emulator implementation, with physical DAT hardware work still gated by device evidence.
-- `clients/android-xr/` — Gradle/Kotlin client buildable for phone/AVD; experimental Glimmer paths remain feature-gated and require hardware-specific verification.
-- `v0-web/` — independent Vercel/serverless browser prototype with its own package scripts and deployment boundary; it is not merely a static shell.
+Improve interruption handling, latency, capture-to-answer continuity, citation access, recovery and
+graceful degradation within the requested task. Try different delivery and interaction patterns with
+synthetic inputs while preserving capture consent, retention and source truth. Shared Core semantics
+remain consistent across clients; lack of hardware limits evidence claims rather than blocking useful
+work on another authorized surface.
 
-## Run & toolchain (`core/`, run commands from `core/`)
-
-- **Install:** `npm install`
-- **Run:** `npm start` (entry `src/server.ts` via `tsx`; REST + WS on `PORT`, default 4000) · `npm run dev` (watch). Boots with **no API key** using the mock voice + mock research + stub enrichment; a `GEMINI_API_KEY` upgrades OCR / research / enrichment / Gemini Live voice.
-- **Verification order** (`code-change`; **no linter is configured — do not invent one**): `npm run typecheck` (`tsc --noEmit`, strict + `noUncheckedIndexedAccess`) → `npm test` (Vitest, `test/**/*.test.ts`). Watch: `npm run test:watch`.
-- Validate all external/structured data with **zod** (the Pydantic-equivalent here). Model SDK is `@google/genai`.
-- For a client change, use that client's README and package/Gradle scripts as command authority. Do not infer that a Core pass validates a browser, emulator, physical device, or deployed Vercel surface.
+`core/README.md` owns Core commands/protocols and `core/AGENTS.md` owns its toolchain traps.
+Read the affected client README: `clients/web/README.md`, `clients/meta-rbd/README.md`,
+`clients/meta-rbd/web-app/README.md`, `clients/meta-rbd/dat-android/README.md`,
+`clients/android-xr/README.md`, or `v0-web/README.md`. `clients/toolchain.md` is dated installed-toolchain
+reference, not proof of current hardware or a new deployment authorization. `v0-web/` has its own
+serverless/deployment boundary.
 
 ## Secrets & data
 
@@ -56,9 +55,9 @@ proof.
 ## Completion and interface
 
 A change is complete only for the surfaces actually exercised. Report Core tests, browser smoke,
-emulator build/test, physical-device evidence, and deployment verification as separate states. Stop
-when a required device, permission, source, or privacy behavior cannot be verified; do not widen the
-claim.
+emulator build/test, physical-device evidence, and deployment verification as separate states. Hold the claim or dependent action
+when a required device, permission, source, or privacy behavior cannot be verified; continue independent
+authorized work and name what evidence is missing. Do not widen the claim.
 
 ## Interface
 

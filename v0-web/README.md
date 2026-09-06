@@ -118,7 +118,7 @@ The roadmap addendum projects ~4× speedup and <50% cost. No code changes needed
 
 ## Swapping in a different model entirely
 
-Pull `api/research.js`'s Gemini logic into a `lib/researchProvider.js` module with a `research({ imageBase64, question }) → { answer, citations }` signature. Then write an alternate provider (Anthropic Claude with web search tool, or TML-Interaction-Small when that preview opens). The browser side doesn't change. This is the v1 step — see the `VoiceSession` interface sketch in [architecture.md](../architecture.md).
+Pull `api/research.js`'s Gemini logic into a `lib/researchProvider.js` module with a `research({ imageBase64, question }) → { answer, citations }` signature. Then write an alternate provider (Anthropic Claude with web search tool, or TML-Interaction-Small when that preview opens). The browser side doesn't change. This is the v1 step — see the typed `VoiceSession` owner and provider seams in [architecture.md](../architecture.md).
 
 ## Fallback: local server + tunnel (if you don't want to deploy)
 
