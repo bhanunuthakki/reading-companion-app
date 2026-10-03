@@ -1,10 +1,8 @@
 # Reading Companion — Project Rulebook
 
-> Layers on top of the runtime's global `AGENTS.md`. Shared safety and procedure routing are not repeated here; only repo-specific facts follow.
-
 ## What this repo is
 
-Ambient research partner for serious readers: tap the glasses, ask about the page you're on, the Core captures it, dispatches research, and answers in your ear while you keep reading. This is an implementation-stage, multi-client repository: Core and several browser/device clients exist, while hardware validation and deployment status vary by surface. Read the design docs and the affected client's README before any non-trivial change:
+Ambient research partner for serious readers: tap the glasses, ask about the page you're on, the Core captures it, dispatches research, and answers in your ear while you keep reading. Core and several browser/device clients exist; hardware validation and deployment status vary by surface. Load the relevant owners below before changing their behavior:
 
 The objective is to answer the reader's question with minimal interruption while preserving source
 attribution, privacy, and honest device capability. A coherent capture→ask→research→delivery loop
@@ -24,12 +22,19 @@ synthetic inputs while preserving capture consent, retention and source truth. S
 remain consistent across clients; lack of hardware limits evidence claims rather than blocking useful
 work on another authorized surface.
 
-`core/README.md` owns Core commands/protocols and `core/AGENTS.md` owns its toolchain traps.
-Read the affected client README: `clients/web/README.md`, `clients/meta-rbd/README.md`,
-`clients/meta-rbd/web-app/README.md`, `clients/meta-rbd/dat-android/README.md`,
-`clients/android-xr/README.md`, or `v0-web/README.md`. `clients/toolchain.md` is dated installed-toolchain
-reference, not proof of current hardware or a new deployment authorization. `v0-web/` has its own
-serverless/deployment boundary.
+Load only the affected implementation owners:
+
+| Work | Owner |
+|---|---|
+| Core commands, protocols, toolchain | `core/README.md`, `core/AGENTS.md` |
+| Web client | `clients/web/README.md` |
+| Meta RBD and browser client | `clients/meta-rbd/README.md`, `clients/meta-rbd/web-app/README.md` |
+| Meta Android client | `clients/meta-rbd/README.md`, `clients/meta-rbd/dat-android/README.md` |
+| Android XR client | `clients/android-xr/README.md` |
+| v0 serverless/deployment boundary | `v0-web/README.md` |
+
+`clients/toolchain.md` is dated installed-toolchain reference, not proof of current hardware
+or deployment authorization.
 
 ## Secrets & data
 
